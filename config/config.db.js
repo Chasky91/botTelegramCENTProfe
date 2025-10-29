@@ -1,7 +1,7 @@
 import mysql from 'mysql2/promise'
 
 //creamos la conexions
-const connection = mysql.createPool({
+const pool = mysql.createPool({
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',
     port: process.env.DB_PORT || 5306,
@@ -16,4 +16,4 @@ const connection = mysql.createPool({
 
 //console.log(connection)
 
-export default connection
+export default pool

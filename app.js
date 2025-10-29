@@ -1,30 +1,26 @@
 import express from 'express'
+import cors from 'cors'
 import pool from './config/config.db.js'
-import listadodeAlumnos from './alumnos.js'
-import connection from './config/config.db.js'
+import routerAlumno from './router/alumnoRouter.js'
 
 const app = express()
+app.use(express.json())
 
+const  configuracionCORS = {
+  origin: 'http://127.0.0.1:5500',
+  optionsSuccessStatus: 200,
+}
+
+app.use(cors(
+
+))
 
 app.get('/', (req, res) => {
   res.send('Bot del cent44!')
 })
 
 
-app.get('/alumnos', async (req, res) => {
-  
-})
-
-app.get('/alumnos/:dni', async (req, res) => {
-  console.log(req.params.dni)
-  res.send('Enviando un alumno por DNI ' + req.params.dni)
-})
-
-
-app.post('/alumnos',  (req, res) => {
-
-  res.send('Registro de alumno') 
-})
+app.use('/alumnos',routerAlumno)
 
 
 app.listen(3000, () => {

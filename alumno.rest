@@ -1,10 +1,8 @@
 POST http://localhost:3000/alumnos
 
 ### 
-GET http://localhost:3000/alumnos
+GET http://localhost:3000/alumnos/
 
 
 ### 
-GET http://localhost:3000/alumnos/2
-
-
+GET http://localhost:3000/alumnos/42345678
