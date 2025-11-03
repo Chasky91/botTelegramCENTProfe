@@ -6,3 +6,29 @@ GET http://localhost:3000/alumnos/
 
 ### 
 GET http://localhost:3000/alumnos/42345678
+
+
+### 
+PUT http://localhost:3000/alumnos/42345678
+Content-Type: application/json
+
+{
+    "nombre": "Juan",
+    "apellido": "Perez Actualizado",
+    "telefono": "12345678"
+}
+
+
+### 
+POST http://localhost:3000/alumnos
+Content-Type: application/json
+
+{
+    "dni": "1230010",
+    "apellido": "Perez Ruiz",
+    "nombre": "Economus",
+    "telefono": "12345678"
+}
+
+###
+DELETE http://localhost:3000/alumnos/1230010
