@@ -1,4 +1,4 @@
-POST http://localhost:3000/alumnos
+
 
 ### 
 GET http://localhost:3000/alumnos/
@@ -24,7 +24,7 @@ POST http://localhost:3000/alumnos
 Content-Type: application/json
 
 {
-    "dni": "1230010",
+    "dni": "1130010",
     "apellido": "Perez Ruiz",
     "nombre": "Economus",
     "telefono": "12345678"

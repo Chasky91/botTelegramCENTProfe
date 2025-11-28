@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import pool from './config/config.db.js'
 import routerAlumno from './router/alumnoRouter.js'
+import routerAuth from './router/authRouter.js'
 
 const app = express()
 app.use(express.json())
@@ -11,16 +12,17 @@ const  configuracionCORS = {
   optionsSuccessStatus: 200,
 }
 
-app.use(cors(
+app.use(cors())
 
-))
+app.use('/auth',routerAuth)
+app.use('/alumnos',routerAlumno)
+
 
 app.get('/', (req, res) => {
   res.send('Bot del cent44!')
 })
 
 
-app.use('/alumnos',routerAlumno)
 
 
 app.listen(3000, () => {
